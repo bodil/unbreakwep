@@ -1,0 +1,19 @@
+{
+    "name": "UnbreakWEP",
+    "version": "0.1",
+    "description": "Make NaviWEP suck a little less.",
+    "icons": {
+        "48": "icon_48.png",
+        "128": "icon_128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://naviwep.steria.no/NaviWEB/timereg_direct.aspx"],
+            "js": ["jquery.js", "unbreak_timereg_direct.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "options_page": "options.html",
+    "background_page": "background.html"
+}
+
