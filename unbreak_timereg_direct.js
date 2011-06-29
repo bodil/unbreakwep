@@ -24,7 +24,7 @@
         var columns_in_row = $("tr.rgEditRow:first span.RadInput input:first-child").length;
         $.each(rows, function(row_index) {
             $.each($(this).find("span.RadInput input:first-child"), function(column_index) {
-                if (settings["wrong_tab_order"]) {
+                if (settings.wrong_tab_order) {
                     $(this).attr("tabindex", "" + (row_index * columns_in_row + (column_index + 1))).keydown(keynav);
                 } else {
                     $(this).attr("tabindex", "" + (column_index * rows.length + (row_index + 1))).keydown(keynav);
@@ -32,7 +32,7 @@
             });
         });
         $("span.RadInput input:first").focus();
-    }
+    };
     chrome.extension.sendRequest({ "method": "getSettings" }, reorder);
 
 })();

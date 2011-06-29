@@ -20,7 +20,7 @@ function restore_options() {
     chrome.extension.sendRequest({ "method": "getSettings" }, function(settings) {
         console.log(settings);
         if (settings === null) settings = {};
-        if (settings["wrong_tab_order"]) {
+        if (settings.wrong_tab_order) {
             $("#wrong_tab_order").attr("checked", "checked");
         } else {
             $("#wrong_tab_order").removeAttr("checked");
